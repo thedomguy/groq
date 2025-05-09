@@ -35,9 +35,14 @@ cd groq
 ./scripts/setup.sh
 ```
 
-4. Run the example:
+4. Build and run the examples:
 
 ```bash
+# Build the examples
+go build -o bin/chat_completion examples/chat_completion.go
+go build -o bin/chat_with_history examples/chat_with_history.go
+
+# Run an example
 ./bin/chat_completion
 ```
 

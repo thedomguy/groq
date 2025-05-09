@@ -10,6 +10,7 @@ import (
 
 const (
 	baseURL = "https://api.groq.com/openai/v1"
+	version = "0.1.0"
 )
 
 // Client represents a Groq API client
@@ -17,6 +18,7 @@ type Client struct {
 	apiKey     string
 	httpClient *http.Client
 	baseURL    string
+	version    string
 }
 
 // NewClient creates a new Groq API client
@@ -25,7 +27,13 @@ func NewClient(apiKey string) *Client {
 		apiKey:     apiKey,
 		httpClient: &http.Client{},
 		baseURL:    baseURL,
+		version:    version,
 	}
+}
+
+// Version returns the current version of the package
+func Version() string {
+	return version
 }
 
 // Message represents a message in the chat
