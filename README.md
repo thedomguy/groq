@@ -32,18 +32,44 @@ cd groq
 3. Run the setup script:
 
 ```bash
-./scripts/setup.sh
+make setup
 ```
 
 4. Build and run the examples:
 
 ```bash
 # Build the examples
-go build -o bin/chat_completion examples/chat_completion.go
-go build -o bin/chat_with_history examples/chat_with_history.go
+make examples
 
 # Run an example
 ./bin/chat_completion
+```
+
+## Development
+
+The project uses a Makefile for common development tasks:
+
+```bash
+# Show all available commands
+make help
+
+# Install dependencies
+make deps
+
+# Run tests
+make test
+
+# Build the library
+make build
+
+# Run linter
+make lint
+
+# Generate documentation
+make docs
+
+# Clean build artifacts
+make clean
 ```
 
 ## Installation
